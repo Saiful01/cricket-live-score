@@ -1,0 +1,74 @@
+@font-face {
+    font-family: KongshoMJ-Bold, serif;
+    src: url('KongshoMJ-Bold.otf');
+}
+body, p, h1, h2, h3, h4, h5, h6, li, a, li a, label {
+    font-family: KongshoMJ-Bold, serif !important;
+
+}
+
+
+body {
+   /* font-family: AvenirLTProRoman, sans-serif, Arial;*/
+    font-size: 15px;
+    animation: fadeIn linear 2s;
+    -webkit-animation: fadeIn linear 2s;
+    -moz-animation: fadeIn linear 2s;
+    -o-animation: fadeIn linear 2s;
+    -ms-animation: fadeIn linear 2s;
+}
+
+.content-part {
+    width: 295px;
+    height: 250px;
+   /* background: #FF2B85;*/
+    margin: 0px auto;
+  /*  overflow:scroll;*/
+/*    border: 1px solid #e7e4e4*/
+}
+.main-headline {
+    margin-top: -244px;
+    margin-left: 79px;
+    position: absolute;
+    color: #4D3B00;
+}
+.score-board-title-1 {
+    margin-top: -199px;
+    margin-left: 79px;
+    position: absolute;
+}
+.score-board-title-2 {
+    margin-top: -134px;
+    margin-left: 79px;
+    position: absolute;
+}
+.score-board-1 {
+    margin-top: -169px;
+    margin-left: 45px;
+    position: absolute;
+    color: white;
+}
+.score-board-3 {
+    margin-top: -103px;
+    margin-left: 45px;
+    position: absolute;
+    color: white;
+}
+.score-board-2 {
+    margin-top: -169px;
+    margin-left: 215px;
+    position: absolute;
+    color: white;
+}
+.score-board-4 {
+    margin-top: -103px;
+    margin-left: 215px;
+    position: absolute;
+    color: white;
+}
+.team-name {
+    text-transform: uppercase;
+    color: black;
+}
+
+

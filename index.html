@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--<meta http-equiv="refresh" content="5" >-->
+
+    <meta name="ad.size" content="width=300,height=250">
+<!--    <link rel="icon" type="image/x-icon" href="img/1.png">-->
+
+
+    <title>Score Board</title>
+
+    <link href="css/main.css" id="app-style" rel="stylesheet" type="text/css"/>
+
+    <script type="text/javascript">
+        var clickTag1 = "https://www.facebook.com/ispahanitea?_rdc=1&_rdr";
+    </script>
+
+
+</head>
+<body>
+
+
+<div class="content-part" id="content-part">
+    <a href="javascript:void(window.open(clickTag1))">
+    <img src="img/score-board.png" width="100%">
+    <div class="main-headline">
+        <h5>ইস্পাহানি মির্জাপুর চায়ের <br> সাথে জমুক ভরপুর খেলা</h5>
+    </div>
+    <div class="score-board-title-1">
+        <h3 class="team-name"  id="firstTeamName" ></h3>
+    </div>
+    <div class="score-board-1">
+        <h3 id="TeamFirstScoreAndWicket"></h3>
+    </div>
+    <div class="score-board-2">
+        <h3 id="firstTeamOver"></h3>
+    </div>
+    <div class="score-board-title-2">
+        <h3 class="team-name" id="secondTeamName" ></h3>
+    </div>
+    <div class="score-board-3">
+        <h3 id="TeamSecondScoreAndWicket"></h3>
+    </div>
+    <div class="score-board-4">
+        <h3 id="secondTeamOver"></h3>
+    </div>
+    </a>
+
+
+
+</div>
+
+
+<script src="js/jquery.min.js"></script>
+
+<!--<script src="js/api.js"></script>-->
+
+
+<!--
+<script>
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://pavscores.com/api/query/matchScoreBoard", true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify({
+        status: "result", match_id:3119
+    }));
+    xhr.onload = function() {
+        var data = JSON.parse(this.responseText);
+       // console.log(data['result_data']['match_scoreboard'][0]['first_stats']['total_score']['score']);
+
+        let firstTeamName = data['result_data']['match_scoreboard'][0]['batting_team']['name'];
+        let firstTeamScore = data['result_data']['match_scoreboard'][0]['batting_stats']['total_score']['score'];
+        let firstTeamWicket = data['result_data']['match_scoreboard'][0]['batting_stats']['total_score']['wicket'];
+        let firstTeamOver = data['result_data']['match_scoreboard'][0]['batting_stats']['total_score']['over'];
+        let TeamFirstScoreAndWicket = firstTeamScore+"/"+firstTeamWicket;
+
+        let secondTeamName = data['result_data']['match_scoreboard'][1]['batting_team']['name'];
+        let secondTeamScore = data['result_data']['match_scoreboard'][1]['batting_stats']['total_score']['score'];
+        let secondTeamWicket = data['result_data']['match_scoreboard'][1]['batting_stats']['total_score']['wicket'];
+        let secondTeamOver = data['result_data']['match_scoreboard'][1]['batting_stats']['total_score']['over'];
+        let TeamSecondScoreAndWicket = secondTeamScore+"/"+secondTeamWicket;
+
+        document.getElementById('firstTeamName').innerHTML = firstTeamName;
+        document.getElementById('firstTeamOver').innerHTML = firstTeamOver;
+        document.getElementById('TeamFirstScoreAndWicket').innerHTML = TeamFirstScoreAndWicket;
+
+        document.getElementById('secondTeamName').innerHTML = secondTeamName;
+        document.getElementById('secondTeamOver').innerHTML = secondTeamOver;
+        document.getElementById('TeamSecondScoreAndWicket').innerHTML = TeamSecondScoreAndWicket;
+    };
+
+
+</script>
+-->
+
+
+<script>
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://pavscores.com/api/query/matchList", true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify({
+        status: "live", event_id:106
+    }));
+    xhr.onload = function() {
+        var data = JSON.parse(this.responseText);
+        //console.log(data['result_data']['match_list'][0]['innings_bs_summary']);
+
+        let firstTeamName = data['result_data']['match_list'][0]['innings_bs_summary'][0]['team']['name'];
+        let firstTeamScore = data['result_data']['match_list'][0]['innings_bs_summary'][0]['score']['run'];
+        let firstTeamWicket = data['result_data']['match_list'][0]['innings_bs_summary'][0]['score']['wicket'];
+        let firstTeamOver = data['result_data']['match_list'][0]['innings_bs_summary'][0]['score']['over'];
+        let TeamFirstScoreAndWicket = firstTeamScore+"/"+firstTeamWicket;
+
+        let secondTeamName = data['result_data']['match_list'][0]['innings_bs_summary'][1]['team']['name'];
+        let secondTeamScore = data['result_data']['match_list'][0]['innings_bs_summary'][1]['score']['run'];
+        let secondTeamWicket = data['result_data']['match_list'][0]['innings_bs_summary'][1]['score']['wicket'];
+        let secondTeamOver = data['result_data']['match_list'][0]['innings_bs_summary'][1]['score']['over'];
+        let TeamSecondScoreAndWicket = secondTeamScore+"/"+secondTeamWicket;
+
+        document.getElementById('firstTeamName').innerHTML = firstTeamName;
+        document.getElementById('firstTeamOver').innerHTML = firstTeamOver;
+        document.getElementById('TeamFirstScoreAndWicket').innerHTML = TeamFirstScoreAndWicket;
+
+        document.getElementById('secondTeamName').innerHTML = secondTeamName;
+        document.getElementById('secondTeamOver').innerHTML = secondTeamOver;
+        document.getElementById('TeamSecondScoreAndWicket').innerHTML = TeamSecondScoreAndWicket;
+    };
+
+
+</script>
+
+
+
+</body>
+</html>
